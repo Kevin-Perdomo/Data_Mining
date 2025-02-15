@@ -152,4 +152,4 @@ plt.legend()
 plt.savefig('grafico.png')
 
 # Exibe o gráfico
-plt.show()
+# plt.show()
