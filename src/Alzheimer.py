@@ -149,7 +149,7 @@ plt.ylabel('Valor da Métrica')
 plt.legend()
 
 # Salva o gráfico em um arquivo
-plt.savefig('grafico.png')
+plt.savefig('Grafico/grafico.png')
 
 # Exibe o gráfico
 # plt.show()
