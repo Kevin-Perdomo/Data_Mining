@@ -6,7 +6,6 @@ from sklearn import svm
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import matplotlib.pyplot as plt
 
-
 # Definir o caminho do arquivo CSV 
 file_path = 'data/alzheimers_disease_data.csv'
 
@@ -77,7 +76,6 @@ print(f"Precisão: {precisao_Tree*100:.2f}%")
 print(f"Recall: {recall_Tree*100:.2f}%")
 print(f"F1-score: {f1_Tree*100:.2f}%")
 
-
 # Criar e treinar o modelo KNN
 knn = KNeighborsClassifier(n_neighbors=50)  # Número de vizinhos pode ser ajustado
 knn.fit(X_train, y_train)
@@ -96,7 +94,6 @@ print(f"\nAcurácia do modelo: {acuracia_KNN*100:.2f}%")
 print(f"Precisão: {precisao_KNN*100:.2f}%")
 print(f"Recall: {recall_KNN*100:.2f}%")
 print(f"F1-score: {f1_KNN*100:.2f}%")
-
 
 # Criar e treinar o modelo SVM
 model = svm.SVC(kernel='linear', random_state=42)  # Kernel linear pode ser alterado para 'rbf', 'poly', etc.
@@ -117,8 +114,6 @@ print(f"Precisão: {precisao_SVM*100:.2f}%")
 print(f"Recall: {recall_SVM*100:.2f}%")
 print(f"F1-score: {f1_SVM*100:.2f}%")
 
-
-
 algoritmos = ['Decision Tree', 'KNN', 'SVM']
 acuracias = [acuracia_Tree, acuracia_KNN, acuracia_SVM]
 precisoes = [precisao_Tree, precisao_KNN, precisao_SVM]
@@ -133,6 +128,7 @@ r1 = range(len(algoritmos))
 r2 = [x + bar_width for x in r1]
 r3 = [x + bar_width for x in r2]
 r4 = [x + bar_width for x in r3]
+
 # Cria as barras para cada métrica
 plt.bar(r1, acuracias, color='#B03F3F', width=bar_width, label='Acurácia')
 plt.bar(r2, precisoes, color='#4B4BD5', width=bar_width, label='Precisão')
