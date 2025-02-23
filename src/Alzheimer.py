@@ -121,13 +121,13 @@ recalls = [recall_Tree, recall_KNN, recall_SVM]
 f1_score = [f1_Tree, f1_KNN, f1_SVM]
 
 # Define a largura das barras
-bar_width = 0.25
+bar_width = 0.15
 
-# Define as posições das barras no eixo x
+# Define as posições das barras no eixo x com mais espaçamento
 r1 = range(len(algoritmos))
-r2 = [x + bar_width for x in r1]
-r3 = [x + bar_width for x in r2]
-r4 = [x + bar_width for x in r3]
+r2 = [x + bar_width + 0.05 for x in r1]
+r3 = [x + 2 * (bar_width + 0.05) for x in r1]
+r4 = [x + 3 * (bar_width + 0.05) for x in r1]
 
 # Cria as barras para cada métrica
 plt.bar(r1, acuracias, color='#B03F3F', width=bar_width, label='Acurácia')
@@ -136,7 +136,7 @@ plt.bar(r3, recalls, color='#E28239', width=bar_width, label='Recall')
 plt.bar(r4, f1_score, color='#AE41AE', width=bar_width, label='F1 Score')
 
 # Define os rótulos do eixo x
-plt.xticks([r + bar_width for r in range(len(algoritmos))], algoritmos)
+plt.xticks([r + 1.5 * (bar_width + 0.05) for r in range(len(algoritmos))], algoritmos)
 
 # Adiciona título e legenda
 plt.title('Comparação de Métricas dos Algoritmos')
